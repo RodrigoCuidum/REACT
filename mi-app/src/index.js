@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+const Li = ({ children, estado, casa, edad }) => {
+  console.log(casa, edad);
+  return(
+  <li>{ children } estoy { estado }</li>
+  )
+}
+const X = () =>
+  <ul>
+    <Li 
+    estado={'feliz'}
+    casa={false}
+    edad={24}
+    >
+      Chanchito</Li>
+    <Li estado={'triste'}
+    casa={false}
+    edad={12}>
+      Chanchito</Li>
+    <Li
+    estado={'Gilipollas'}
+    casa={true}
+    edad={20}>
+      Yurii</Li>
+  </ul>
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-'lala', document.getElementById('root')
+<X />, document.getElementById('root')
 );
 
 
